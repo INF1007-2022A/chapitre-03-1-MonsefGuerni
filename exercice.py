@@ -3,33 +3,45 @@
 
 
 import math
+from math import floor
 
 def square_root(a: float) -> float:
-    return 0.0
+    reponse = a**(1/2)
+    return reponse
 
 
 def square(a: float) -> float:
-    return 0.0
+    reponse = a**2
+    return reponse
 
 
 def average(a: float, b: float, c: float) -> float:
-    return 0.0
+    reponse = (a+b+c)/3
+    return reponse
 
 
 def to_radians(angle_degs: float, angle_mins: float, angle_secs: float) -> float:
-    return 0.0
+    deg_exact = angle_degs + angle_mins/60 + angle_secs/3600
+    deg_rad = deg_exact*math.pi/180
+    return deg_rad
 
 
 def to_degrees(angle_rads: float) -> tuple:
-    return 0.0, 0.0, 0.0
+    degre = angle_rads * 180 / math.pi
+    print(degre)
+    deg = floor(degre)
+    minute = floor((degre - deg) * 60)
+    seconde = (degre - deg - minute / 60) * 3600
+    return deg, minute, seconde
 
 
 def to_celsius(temperature: float) -> float:
-    return 0.0
-
+    temperature = (temperature - 32) / 1.8
+    return temperature
 
 def to_farenheit(temperature: float) -> float:
-    return 0.0
+    temperature = temperature * 1.8 + 32
+    return temperature
 
 
 def main() -> None:
